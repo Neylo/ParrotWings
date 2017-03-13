@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="PW.LoginPage"
+	Title="{Binding Title}"
+	IsBusy="{Binding IsBusy}">
+	<ContentPage.Content>
+		<Grid RowSpacing="5" ColumnSpacing="0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="6*"/>
+				<RowDefinition Height="4*"/>	
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width = "*"/>
+				<ColumnDefinition Width = "3*"/>
+				<ColumnDefinition Width = "*"/>
+			</Grid.ColumnDefinitions>
+			
+			<Image
+				Grid.RowSpan ="2"
+				Grid.ColumnSpan = "3"
+                x:Name="HomePageImg"
+				Source="HomePageImg.jpg"
+                Aspect= "AspectFill"
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions = "FillAndExpand" />
+			<Grid
+				Grid.Row = "1"
+				Grid.Column = "1"
+				RowSpacing = "5"
+				Padding = "10">
+			<Grid.RowDefinitions>
+					<RowDefinition Height = "40"/>
+					<RowDefinition Height = "40"/>
+					<RowDefinition Height = "40"/>
+					<RowDefinition Height = "50"/>
+					<RowDefinition Height = "*"/>
+			</Grid.RowDefinitions>
+			<Entry 
+				Text = "{Binding Email, Mode=TwoWay}"
+				Grid.Row = "0"
+				BackgroundColor = "#e5e5e5"
+				FontSize = "Small"
+				Placeholder = "E-mail"/>
+			
+			<Entry 
+				Text = "{Binding Password, Mode=TwoWay}"
+				Grid.Row = "1"
+				BackgroundColor = "#e5e5e5"
+				FontSize = "Small"
+				Placeholder = "Password"
+				IsPassword = "true"/>
+
+			<Button 
+				x:Name="ButtonRegistration"
+				Grid.Row = "2"
+				FontSize = "Small"
+				BorderRadius="0"
+				BorderColor = "White"
+				BackgroundColor ="Transparent"
+				BorderWidth = "0"
+				TextColor="Black"
+				Command = "{Binding SignUp}"
+				Text="New there? Sign Up"/>
+			
+			<Frame
+				Padding = "30,2,30,2"
+				Grid.Row="3"
+				HasShadow ="false"
+				HorizontalOptions = "Center"
+				VerticalOptions = "Center"
+				BackgroundColor="#B2221D">
+			<Button
+				x:Name="ButtonLogin"
+				FontSize = "Medium"
+				BackgroundColor="Transparent"
+				BorderWidth = "0"
+				BorderRadius="0"
+				TextColor="White" 
+				Text="Sign In"
+				Command = "{Binding SignIn}"
+				/>
+			</Frame>
+			</Grid>
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

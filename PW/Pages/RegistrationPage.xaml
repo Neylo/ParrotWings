@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="PW.RegistrationPage"
+	Title = "{Binding Title}">
+	<ContentPage.Content>
+		<Grid Padding="10" RowSpacing = "20">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width = "*"/>
+			</Grid.ColumnDefinitions>
+			<Entry Grid.Row = "0" Grid.Column="0" Text="{Binding UserName}" Placeholder="Username"/>
+			<Entry Grid.Row = "1" Grid.Column="0" Text="{Binding Email}" Placeholder="Email"/>
+			<Entry Grid.Row = "2" Grid.Column="0" Text="{Binding Password}" Placeholder="Password" IsPassword="true"/>
+			<Entry Grid.Row = "3" Grid.Column="0" Text="{Binding PasswordRepeat}" Placeholder="Re-Type Password" IsPassword="true"/>
+			<Button Grid.Row = "4" Grid.Column = "0" Text ="Sign Up" BackgroundColor = "#68a43a" TextColor = "White" Command="{Binding RegistrationCommand}"/>
+			<Label Grid.Row = "5" Grid.Column = "0" Text = "{Binding ErrorText}" TextColor = "Red"/>
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

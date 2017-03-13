@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 x:Class="PW.NewTransactionPage"
+			 xmlns:local="clr-namespace:PW"
+			 Title = "{Binding Title}">
+	<ContentPage.Content>
+		<StackLayout>
+		<Grid BackgroundColor = "#64a131" Padding = "5">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width = "Auto"/>
+				<ColumnDefinition Width = "Auto"/>
+				<ColumnDefinition Width = "*"/>
+				<ColumnDefinition Width = "Auto"/>
+			</Grid.ColumnDefinitions>
+			<Label Grid.Column = "0" Text = "Name:" TextColor = "White"/>
+			<Label Grid.Column = "1" Text = "{Binding Source={x:Static local:UserInfo.Name}}" TextColor = "White"/>
+			<Label Grid.Column = "2" Text = "Balance:" HorizontalTextAlignment = "End" TextColor = "White"/>
+			<Label Grid.Column = "3" Text = "{Binding Balance}" HorizontalTextAlignment ="Start" TextColor = "White"/>
+		</Grid>
+		<StackLayout Spacing = "10" Padding = "10">
+			<Label Text = "Transaction to" HorizontalTextAlignment = "Center"/>
+			<Label Text = "{Binding Name}" HorizontalTextAlignment = "Center" FontSize = "Large"/>
+			<Entry Keyboard = "Numeric" Text="{Binding Amount, Mode = TwoWay}"/>
+			<Button Text = "Send" BackgroundColor = "#68a43a" TextColor = "White" Command = "{Binding SendTransaction}"/>
+			<Label Text = "{Binding ErrorText}" TextColor = "Red"/>
+		</StackLayout>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
