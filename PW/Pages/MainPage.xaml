@@ -8,7 +8,7 @@
 			<ToolbarItem Name="New" Command="{Binding NewTransaction}" Icon = "NewTransactionIcon32.png"/>
 	</ContentPage.ToolbarItems>
 	<ContentPage.Content>
-	<StackLayout>
+	<StackLayout Spacing = "0">
 		
 		<Grid BackgroundColor = "#64a131" Padding = "8">
 			<Grid.ColumnDefinitions>
